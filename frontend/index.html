@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSight AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login / Register  -->
+<section id = 'auth'>
+    <div class = 'auth-hero'>
+        <div class="logo"> ◈ FinSight AI</div>
+        <h1>Financial intelligence for banking customers and lending teams</h1>
+        <p>Understand spending, estimate repayment risk and get answers from trusted financial documents.</p>
+        <ul>
+            <li>📉 Loan repayment risk estimates</li>
+            <li>👥 Customer behaviour segments</li>
+            <li>💬 RAG-powered financial assistant</li>
+        </ul>
+    </div>
+
+    <div class="auth-card"> 
+        <div class="tabs">
+            <button class="tab active" data-tab="login">Log-in</button>
+            <button class="tab" data-tab="register">Create account</button> 
+        </div>
+        <form id="loginForm">
+            <label>Username<input name="username" required autocomplete="username"></label>
+            <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+            <button class="btn" type="submit">Log-in</button>
+        </form>
+        <form id="registerForm" hidden>
+            <label>Username<input name="username" minlength="3" required></label>
+            <label>Email<input name="email" type="email" required></label>
+            <label>Password (min 6 characeters)<input name="password" type="password" minlength="6" required></label>
+            <button class="btn" type="submit">Create account</button>
+        </form>
+    </div>
+</section> 
+
+       <!-- Main App  -->
+
+<div id="app" hidden>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">◈ FinSight AI</div>
+        <nav>
+            <button class="nav active" data-view="dashboard">🏠 Dashboard</button>
+            <button class="nav" data-view="risk">📉 Loan Risk</button>
+            <button class="nav" data-view="segment">👥 Segmentation</button>
+            <button class="nav" data-view="chat">💬 Assistant</button>
+        </nav>
+        <div class="user-box">
+            <div class="avatar" id="avatar">?</div>
+            <div><strong id = 'userName'>-</strong><small id = 'userMail'></small></div>
+            <button id="logoutBtn" title="Log out">⏻</button>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Header -->
+        <header class="topbar">
+            <button id="menuBtn" aria-label="Menu">☰</button>
+            <h2 id="pageTitle">Dashboard</h2>
+        </header>
+
+        <!-- Dashboard -->
+        <section class="view" id="view-dashboard">
+            <div class="stats" id="stats"></div>
+            <h3 class="section-title">Platform features</h3>
+            <div class="features">
+                <div class="card feature" data-go="risk"><span>📉</span><h4>Loan repayment risk</h4><p>Probability that a borrower may miss or delay repayments.</p></div>
+                <div class="card feature" data-go="segment"><span>👥</span><h4>Customer Segmentation</h4><p>Groups customers by spending and financial behaviour.</p></div>
+                <div class="card feature" data-go="chat"><span>💬</span><h4>Financial assistant</h4><p>Answers questions using trusted financial documents.</p></div>
+                <div class="card feature soon"><span>🔎</span><h4>Anomaly detection</h4><p>Flags unusal transactions for review.</p><em>Coming soon</em></div>
+                <div class="card feature soon"><span>📊</span><h4>Financial insights</h4><p>Income, expense, savings and debt trends.</p><em>Coming soon</em></div>
+            </div>
+            <h3 class="section-title">Recent activity</h3>
+            <div class="card" id="activity"><p class="muted">Loading…</p></div>
+        </section>
+
+        <!-- Loan risk -->
+        <section class="view" id="view-risk" hidden>
+            <div class="two-col">
+                <form class="card" id = 'riskForm'>
+                    <h3>Borrower details</h3>
+                    <div class="grid" id="riskFields"></div>
+                    <button class="btn" type="submit">Estimate risk</button>
+                </form>
+                <div class="card result" id="riskResult">
+                    <p class="muted">Fill in the borrower details and click<b>Estimate risk</b>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Segmentation -->
+        <section class="view" id="view-segment" hidden>
+            <div class="two-col">
+                <form class="card" id="segForm">
+                    <h3>Customer behaviour</h3>
+                    <div class="grid" id="segFields"></div>
+                    <button class="btn" type="submit">Find segment</button>
+                </form>
+                <div class="card result" id="segResult">
+                    <p class="muted">Enter a credit-card customer's behaviour to see which segment they belong to.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assistant -->
+        <section class="view" id="view-chat" hidden>
+            <div class="card chat">
+                <div class="messages" id="messages">
+                    <div class="msg bot"><div class="bubble">Hi! Ask me anything about the financial documents I was trained on.</div></div>
+                </div>
+                <div class="chips" id="chips">
+                    <button>What is Assets and Liabilities?</button>
+                    <button>What is the difference savings and investments?</button>
+                    <button>What is a Credit card and a Debit card?</button>
+                </div>
+                <form id="chatForm">
+                    <input id="chatInput" placeholder="Type your question..." autocomplete="off" required>
+                    <button class="btn" type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

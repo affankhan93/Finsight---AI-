@@ -1,0 +1,40 @@
+# RAG 
+langchain
+langchain-community<0.4
+langchain-groq
+langchain-google-genai
+langchain-huggingface
+sentence-transformers
+langchain-classic 
+langchain-pinecone 
+pinecone 
+ragas==0.2.8
+pypdf 
+rank_bm25
+
+
+# Machine learning Model 
+scikit-learn==1.6.1
+joblib 
+pandas
+numpy 
+matplotlib
+seaborn
+plotly 
+kneed 
+xgboost
+
+# Environment 
+python-dotenv
+fonttools
+
+# Back-end 
+fastapi
+uvicorn
+PyJWT 
+pwdlib[argon2]
+
+
+
+
+

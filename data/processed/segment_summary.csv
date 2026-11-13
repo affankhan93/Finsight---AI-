@@ -1,0 +1,5 @@
+Cluster_ID,Segment_Name,Segment_Description,Customer_Count,Median_Balance,Median_Purchases,Median_Cash_Advance,Median_Purchase_Frequency,Customer_Percentage
+0,Frequent Spenders,Customers with frequent purchases and higher spending.,1083,2070.627593,3408.01,0.0,1.0,12.100558659217878
+1,Low Usage Customers,Customers with relatively low purchase activity.,4821,613.814108,182.8,0.0,0.25,53.86592178770949
+2,Cash Advance Users,Customers who frequently use credit-card cash advances.,1310,3530.3770425000002,0.0,3269.9840875,0.0,14.63687150837989
+3,High Balance Customers,Customers with comparatively high outstanding balances.,1736,208.2471905,717.71,0.0,1.0,19.39664804469274

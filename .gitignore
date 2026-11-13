@@ -1,0 +1,11 @@
+# Virtual environments
+.venv
+.env
+
+# SQLachemy  database
+app.db 
+
+# jupyterlab 
+.ipynb_checkpoints 
+
+
