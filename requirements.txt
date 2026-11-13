@@ -11,6 +11,7 @@ pinecone
 ragas==0.2.8
 pypdf 
 rank_bm25
+langchain-text-splitters
 
 
 # Machine learning Model 
@@ -33,6 +34,8 @@ fastapi
 uvicorn
 PyJWT 
 pwdlib[argon2]
+SQLAlchemy
+python-multipart 
 
 
 
